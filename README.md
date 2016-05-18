@@ -1,13 +1,19 @@
-# React Coding Challenge
+###Requirements:
+ - **Node >= 5.10.1** 
+ Should work with Node versions >=5.10.1 because of Babel requirements for ES6, but only tested on Node 6.10. See https://www.npmjs.com/package/babel-preset-node5 for relevant information. Only tested on OS X, but it should work without problems on machines running *NIX (and maybe even Windows)
+ 
+###Instructions
 
-- Create an React app that works primarily with the soundcloud API. This app must extract metadata via a search parameter which allows the user to select a song and then plays it. The app will change the song that is playing based on their selection. 
-- Add a single sign on service to the react application (soundcloud, facebook, google, etc)
+From the same folder level as `README.md`, run the following command:
+``` 
+	npm install
+```
 
-####Prepare to review your logic and/or the modules you wrote or implemented for the challenge. 
+Once NPM has finished installing the modules, you should be able to start the `webpack-dev-server` by running:
 
-##Bonus
-- Add Unit Testing
-- Implement Redux or a flux library of your choosing
-- Prettify the frontend with sass, less, css, foundation, bootstrap, etc
-- Utilize Babel or Require.js
-- Build distributable files with webpack, browserify, etc.
+```
+	npm run dev
+```
+Once the `15ms emit` line appears on the screen, the application should be visible from your browser at
+
+http://localhost:8080
