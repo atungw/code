@@ -1,4 +1,4 @@
-###Requirements:
+###Requirements
  - **Node >= 5.10.1** 
  Should work with Node versions >=5.10.1 because of Babel requirements for ES6, but only tested on Node 6.10. See https://www.npmjs.com/package/babel-preset-node5 for relevant information. Only tested on OS X, but it should work without problems on machines running *NIX (and maybe even Windows)
  
