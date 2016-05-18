@@ -17,3 +17,6 @@ Once NPM has finished installing the modules, you should be able to start the `w
 Once the `15ms emit` line appears on the screen, the application should be visible from your browser at
 
 http://localhost:8080
+
+###Known Bugs
+- Single signon doesn't work with Block third-party cookies and site data checked in Chrome. (Took me awhile to figure out why it wasn't working.)
