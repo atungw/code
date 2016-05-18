@@ -14,6 +14,15 @@ export default class SoundCloud extends React.Component {
 		window.addEventListener('fetched-tracks', this.fetchedTracks);
 	}
 
+	playTrack(uri) {
+		console.log("play");
+		console.log(uri);
+		var widgetIframe = document.getElementById('sc-widget'),
+        widget  = SC.Widget(widgetIframe);
+        console.log(widget);
+        widget.load(uri, {auto_play: true});
+	}
+
 	fetchedTracks(event) {
 		console.log(event);
 		this.setState({tracks: event.data});
@@ -44,11 +53,13 @@ export default class SoundCloud extends React.Component {
 					</thead>
 					<tbody>
 						{
-							this.state.tracks.map(function(track) {
-								return (<tr key={track.id}>
-									<td>{track.title}</td>
-									<td></td>
-								</tr>)
+							this.state.tracks.map(track => {
+								return (
+									<tr key={track.id}>
+										<td onClick={this.playTrack.bind(this, track.uri)}>{track.title}</td>
+										<td></td>
+									</tr>
+								)
 							})
 						}
 					</tbody>
