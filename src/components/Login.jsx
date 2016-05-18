@@ -18,7 +18,7 @@ export default class Login extends React.Component {
 	onSignIn(googleUser) {
 		console.log("signed in successfully");
 		console.log(googleUser);
-		let profile = googleUser.getBasicProfile();
+		let profile = googleUser.data.getBasicProfile();
 		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
 		console.log('Name: ' + profile.getName());
 		console.log('Image URL: ' + profile.getImageUrl());
@@ -27,14 +27,13 @@ export default class Login extends React.Component {
 
 	renderGoogleLoginButton(self) {
 	    console.log('rendering google signin button')
-	    console.log(this);
 	    gapi.signin2.render('my-signin2', {
 	      'scope': 'https://www.googleapis.com/auth/plus.login',
 	      'width': 200,
 	      'height': 50,
 	      'longtitle': true,
 	      'theme': 'light',
-	      'onsuccess': this.onSignIn
+	      'onsuccess': triggerGoogleSignin
 	    })
 	}
 
@@ -51,6 +50,7 @@ export default class Login extends React.Component {
 			<div>
 				<div>Please sign into the SoundCound Player App with Google Auth</div>
 				<div id="my-signin2"></div>
+				<div id="search"></div>
 				<a href="#" onClick={this.signOut}>Sign out</a>
 			</div>
 		);

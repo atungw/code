@@ -5,10 +5,22 @@
     <title>Hart Code Challenge</title>
     <meta name="google-signin-client_id" content="867621643411-unmi0t3lnqa866ldujhnc0qt2jepm0v7.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js?onload=triggerGoogleLoaded" async defer></script>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 	<script type="text/javascript">
 	  function triggerGoogleLoaded() {
 	    window.dispatchEvent(new Event('google-loaded'));
 	  }
+
+	  function triggerGoogleSignin(data) {
+	  	console.log("logged in");
+	  	var event = new Event('google-signin');
+	  	event.data = data;
+	  	window.dispatchEvent(event);
+	  }
+
+		SC.initialize({
+	  		client_id: '06202861eb04032e26f100982248a011'
+		});
 	</script>    
   </head>
   <body>

@@ -1,8 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
 import Login from './components/Login'
+import SoundCloud from './components/SoundCloud'
 
 render(
-	<Login />,
+	<div>
+		<Login />
+		<SoundCloud />
+	</div>,
 	document.getElementById('app')
 )
